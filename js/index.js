@@ -43,9 +43,9 @@ Shoes.prototype.renderShoes = function() {
     var newH2 = document.createElement('h2')
     var newImg = document.createElement('img')
     var newH5 = document.createElement('h5')
-    newH2.textContext = this.shoes[i].name
+    newH2.textContent = this.shoes[i].name
     newImg.src = this.shoes[i].img
-    newH5.textContext = this.shoes[i].price
+    newH5.textContent = this.shoes[i].price
     newDiv.appendChild(newH2)
     newDiv.appendChild(newImg)
     newDiv.appendChild(newH5)
