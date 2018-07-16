@@ -49,22 +49,39 @@ Shoes.prototype.renderShoes = function() {
     newDiv.appendChild(newH2)
     newDiv.appendChild(newImg)
     newDiv.appendChild(newH5)
-    newDiv.className = "shoe-card"
+    newDiv.className = "shoe-card container"
     document.body.appendChild(newDiv)
   }
 }
 
 Shoes.prototype.addShoe = function() {
-  var img = document.getElementByName('img')[0]
-  console.log(img)
-  var newShoe = {
-        name: document.getElementById(),
-        img: img
-      }
-  this.shoes.push()
+  var shoesList = this
+  document.getElementsByTagName('form')[0].addEventListener("submit", function(e){e.preventDefault()
+    var img = document.getElementsByName('image')[0].value
+    var name = document.getElementsByName("name")[0].value
+    var price = document.getElementsByName("price")[0].value
+    if (price && name) {
+      if (!img) var img = "http://www.bsmc.net.au/wp-content/uploads/No-image-available.jpg"
+      console.log(img)
+      var newShoe = {
+            name: name,
+            img: img,
+            price: price
+          }
+      shoesList.shoes.push(newShoe)
+      shoesList.renderShoes()
+    }
+  })
 }
 
-new Shoes().renderShoes()
+Shoes.prototype.initialize = function() {
+  return (
+    this.renderShoes(),
+    this.addShoe()
+    )
+}
+
+new Shoes().initialize()
 
 
 
