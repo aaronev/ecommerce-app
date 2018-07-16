@@ -49,13 +49,22 @@ Shoes.prototype.renderShoes = function() {
     newDiv.appendChild(newH2)
     newDiv.appendChild(newImg)
     newDiv.appendChild(newH5)
+    newDiv.className = "shoe-card"
     document.body.appendChild(newDiv)
   }
 }
 
-var nike = new Shoes()
+Shoes.prototype.addShoe = function() {
+  var img = document.getElementByName('img')[0]
+  console.log(img)
+  var newShoe = {
+        name: document.getElementById(),
+        img: img
+      }
+  this.shoes.push()
+}
 
-nike.renderShoes()
+new Shoes().renderShoes()
 
 
 
